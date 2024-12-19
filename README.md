@@ -1,3 +1,9 @@
+## Model , Service , Controller : 
+* User
+* Review
+* House
+
+
 ## **API Endpoints**
 
 ### **User-related Endpoints**
