@@ -68,4 +68,9 @@ public class OfferController {
        return ResponseEntity.status(200).body(offerService.getCheapestOffer(userId,reportId));
     }
 
+    // getOffersStatusForServiceProvider
+    @GetMapping("/get-reports-status/{id}")
+    public ResponseEntity<?> getOffersStatusForServiceProvider(@PathVariable Integer id){
+        return ResponseEntity.status(200).body(offerService.getOffersStatusForServiceProvider(id));
+    }
 }

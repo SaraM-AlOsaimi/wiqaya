@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Service
 @RequiredArgsConstructor
 public class OfferService {
@@ -196,5 +197,34 @@ public class OfferService {
 
         return cheapestOffer;
     }
+
+
+
+    // get Offers Status For Service Provider
+    public List<OfferDTOOUT> getOffersStatusForServiceProvider(Integer serviceProviderId) {
+        // Check if the service provider exists
+        if (!serviceProviderRepository.existsById(serviceProviderId)) {
+            throw new ApiException("Service provider not found");
+        }
+
+        // Fetch offers for the service provider
+        List<Offer> offers = offerRepository.findOffersByServiceProviderId(serviceProviderId);
+
+        if (offers.isEmpty()) {
+            throw new ApiException("No offers found for this service provider");
+        }
+
+        // Map offers to DTOs
+        return offers.stream()
+                .map(offer -> new OfferDTOOUT(
+                        offer.getId(),
+                        offer.getDescription(),
+                        offer.getStatus(),
+                        offer.getPrice(),
+                        serviceProviderId
+                ))
+                .collect(Collectors.toList());
+    }
+
 
 }

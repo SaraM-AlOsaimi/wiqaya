@@ -3,6 +3,7 @@ package com.example.wiqaya.Service;
 
 import com.example.wiqaya.ApiResponse.ApiException;
 import com.example.wiqaya.DTO.IN.ReportDTOIN;
+import com.example.wiqaya.DTO.OUT.HouseDTOOUT2;
 import com.example.wiqaya.DTO.OUT.ReportDTOOUT;
 import com.example.wiqaya.Model.*;
 import com.example.wiqaya.Repository.EngineerRepository;
@@ -127,6 +128,18 @@ public class ReportService {
 
         report.setIsPublished(true);
         reportRepository.save(report);
+    }
+
+
+    // user get all the reports by his id
+    public List<Report> getMyReports(Integer userid){
+        User user=userRepository.findUserById(userid);
+        if(user==null)throw new ApiException("user not found");
+        if(user.getRole().equalsIgnoreCase("admin"))throw new ApiException("admin doesn't have reports");
+
+        List<Report> reports = reportRepository.findReportsForTheSameUser(userid);
+        if(reports.isEmpty())throw new ApiException("no Reports found");
+        return reports;
     }
 
 }

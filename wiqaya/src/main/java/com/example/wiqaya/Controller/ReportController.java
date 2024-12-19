@@ -38,4 +38,10 @@ public class ReportController {
         reportService.publishReport(user, report);
         return ResponseEntity.status(200).body(new ApiResponse("report published"));
     }
+
+    @GetMapping("/my-reports/{userId}")
+    public ResponseEntity<?> getMyReports(@PathVariable Integer userId){
+        return ResponseEntity.status(200).body(reportService.getMyReports(userId));
+    }
+
 }
