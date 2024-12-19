@@ -1,8 +1,6 @@
 Hadeel end point:
 1-Eng CreateReport
-
 2-service provider sendOffer
-
 3-CancelRequestInspection before 1 day
 4-getOffersByReport
 5-acceptOffer
