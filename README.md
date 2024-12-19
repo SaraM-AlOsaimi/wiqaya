@@ -1,4 +1,4 @@
-## Model , Service , Controller : 
+## Model , Service , Controller , CRUD , DTOS : 
 * User
 * Review
 * House
