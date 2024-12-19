@@ -4,8 +4,6 @@
 * House
 
 
-## **API Endpoints**
-
 ### **User-related Endpoints**
 1. **`getAllRequestForOneUser(Integer userId)`** - Retrieve all requests made by a specific user.  
 2. **`getTopRatedOffersForUser(Integer userId, int topN)`** - Get the top-rated offers for a user, based on service provider ratings.  
