@@ -1,14 +1,14 @@
-Hadeel end point:
-1-Eng CreateReport
-2-service provider sendOffer
-3-CancelRequestInspection before 1 day
-4-getOffersByReport
-5-acceptOffer
-6-getAllReviewsByServiceProviderName
-7-getMyHouses
-8-getHousesByStatus <admin
-9-getAllReviewsHigherThanRating <   // user get all reviews higher than rating
-10-service provider completeOffer(Integer reportId) 
+Hadeel end point:  <br>
+1-Eng CreateReport<br>
+2-service provider sendOffer<br>
+3-CancelRequestInspection before 1 day<br>
+4-getOffersByReport<br>
+5-acceptOffer<br>
+6-getAllReviewsByServiceProviderName<br>
+7-getMyHouses<br>
+8-getHousesByStatus <admin <br>
+9-getAllReviewsHigherThanRating <   // user get all reviews higher than rating<br>
+10-service provider completeOffer(Integer reportId) <br>
 
 
 
